@@ -36,6 +36,9 @@
         console.log(e)
       }
 
+      window.onwheel = handleScroll
+      window.onscroll = handleScroll
+
       window.addEventListener('wheel', handleScroll)
       window.addEventListener('scroll', handleScroll)
       document.addEventListener('wheel', handleScroll)
@@ -45,6 +48,11 @@
       window.addEventListener('scroll', handleScroll, { passive: true })
       document.addEventListener('wheel', handleScroll, { passive: true })
       document.addEventListener('scroll', handleScroll, { passive: true })
+
+      window.addEventListener('wheel', handleScroll, { passive: false })
+      window.addEventListener('scroll', handleScroll, { passive: false })
+      document.addEventListener('wheel', handleScroll, { passive: false })
+      document.addEventListener('scroll', handleScroll, { passive: false })
 
       window.addEventListener('wheel', handleScroll, { capture: true })
       window.addEventListener('scroll', handleScroll, { capture: true })
@@ -66,6 +74,23 @@
       document.addEventListener('scroll', handleScroll, {
         capture: true,
         passive: true,
+      })
+
+      window.addEventListener('wheel', handleScroll, {
+        capture: true,
+        passive: false,
+      })
+      window.addEventListener('scroll', handleScroll, {
+        capture: true,
+        passive: false,
+      })
+      document.addEventListener('wheel', handleScroll, {
+        capture: true,
+        passive: false,
+      })
+      document.addEventListener('scroll', handleScroll, {
+        capture: true,
+        passive: false,
       })
     </script>
   </body>
