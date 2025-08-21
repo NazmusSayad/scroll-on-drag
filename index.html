@@ -31,6 +31,12 @@
     <div class="padding"></div>
 
     <script>
+      const dragElement = document.querySelector('.drag')
+
+      document.addEventListener('dragover', (e) => {
+        e.preventDefault()
+      })
+
       function handleScroll(e) {
         console.log("Yeah, It's scrolling!")
         console.log(e)
@@ -43,21 +49,41 @@
       window.addEventListener('scroll', handleScroll)
       document.addEventListener('wheel', handleScroll)
       document.addEventListener('scroll', handleScroll)
+      document.documentElement.addEventListener('wheel', handleScroll)
+      document.documentElement.addEventListener('scroll', handleScroll)
 
       window.addEventListener('wheel', handleScroll, { passive: true })
       window.addEventListener('scroll', handleScroll, { passive: true })
       document.addEventListener('wheel', handleScroll, { passive: true })
       document.addEventListener('scroll', handleScroll, { passive: true })
+      document.documentElement.addEventListener('wheel', handleScroll, {
+        passive: true,
+      })
+      document.documentElement.addEventListener('scroll', handleScroll, {
+        passive: true,
+      })
 
       window.addEventListener('wheel', handleScroll, { passive: false })
       window.addEventListener('scroll', handleScroll, { passive: false })
       document.addEventListener('wheel', handleScroll, { passive: false })
       document.addEventListener('scroll', handleScroll, { passive: false })
+      document.documentElement.addEventListener('wheel', handleScroll, {
+        passive: false,
+      })
+      document.documentElement.addEventListener('scroll', handleScroll, {
+        passive: false,
+      })
 
       window.addEventListener('wheel', handleScroll, { capture: true })
       window.addEventListener('scroll', handleScroll, { capture: true })
       document.addEventListener('wheel', handleScroll, { capture: true })
       document.addEventListener('scroll', handleScroll, { capture: true })
+      document.documentElement.addEventListener('wheel', handleScroll, {
+        capture: true,
+      })
+      document.documentElement.addEventListener('scroll', handleScroll, {
+        capture: true,
+      })
 
       window.addEventListener('wheel', handleScroll, {
         capture: true,
@@ -75,6 +101,14 @@
         capture: true,
         passive: true,
       })
+      document.documentElement.addEventListener('wheel', handleScroll, {
+        capture: true,
+        passive: true,
+      })
+      document.documentElement.addEventListener('scroll', handleScroll, {
+        capture: true,
+        passive: true,
+      })
 
       window.addEventListener('wheel', handleScroll, {
         capture: true,
@@ -89,6 +123,14 @@
         passive: false,
       })
       document.addEventListener('scroll', handleScroll, {
+        capture: true,
+        passive: false,
+      })
+      document.documentElement.addEventListener('wheel', handleScroll, {
+        capture: true,
+        passive: false,
+      })
+      document.documentElement.addEventListener('scroll', handleScroll, {
         capture: true,
         passive: false,
       })
