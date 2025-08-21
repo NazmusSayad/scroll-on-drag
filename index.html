@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .drag {
+        width: 100px;
+        height: 100px;
+        background: #3498db;
+        margin-inline: auto;
+        cursor: grab;
+        border-radius: 100%;
+      }
+
+      .drag:active {
+        cursor: grabbing;
+      }
+
+      .padding {
+        height: 1000vh;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="drag" draggable="true"></div>
+    <div class="padding"></div>
+
+    <script>
+      function handleScroll(e) {
+        console.log("Yeah, It's scrolling!")
+        console.log(e)
+      }
+
+      window.addEventListener('wheel', handleScroll)
+      window.addEventListener('scroll', handleScroll)
+      document.addEventListener('wheel', handleScroll)
+      document.addEventListener('scroll', handleScroll)
+
+      window.addEventListener('wheel', handleScroll, { passive: true })
+      window.addEventListener('scroll', handleScroll, { passive: true })
+      document.addEventListener('wheel', handleScroll, { passive: true })
+      document.addEventListener('scroll', handleScroll, { passive: true })
+
+      window.addEventListener('wheel', handleScroll, { capture: true })
+      window.addEventListener('scroll', handleScroll, { capture: true })
+      document.addEventListener('wheel', handleScroll, { capture: true })
+      document.addEventListener('scroll', handleScroll, { capture: true })
+
+      window.addEventListener('wheel', handleScroll, {
+        capture: true,
+        passive: true,
+      })
+      window.addEventListener('scroll', handleScroll, {
+        capture: true,
+        passive: true,
+      })
+      document.addEventListener('wheel', handleScroll, {
+        capture: true,
+        passive: true,
+      })
+      document.addEventListener('scroll', handleScroll, {
+        capture: true,
+        passive: true,
+      })
+    </script>
+  </body>
+</html>
